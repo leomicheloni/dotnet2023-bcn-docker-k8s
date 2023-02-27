@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-db
+  labels:
+    app: my-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-db
+  template:
+    metadata:
+      labels:
+        app: my-db
+    spec:
+      containers:
+      - name: my-db
+        image: mysql:5.7
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: my-db-pv
+        env:
+        - name: MYSQL_RANDOM_ROOT_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: mywordpress-config
+              key: MYSQL_RANDOM_ROOT_PASSWORD
+        - name: MYSQL_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: mywordpress-config
+              key: MYSQL_DATABASE
+        - name: MYSQL_USER
+          valueFrom:
+            configMapKeyRef:
+              name: mywordpress-config
+              key: MYSQL_USER
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysecrets
+              key: MYSQL_PASSWORD
+      volumes:
+      - name: my-db-pv
+        persistentVolumeClaim:
+          claimName: mysql-pvc
+      - name: my-db-config
+        configMap:
+          name: mywordpress-config

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: my-wordpress
+  name: mywordpress-config
+data:
+  MYSQL_RANDOM_ROOT_PASSWORD: '1'
+  MYSQL_DATABASE: password 
+  MYSQL_USER: readWrite
+  MYSQL_PASSWORD: password
+  MYSQL_HOST: mysql
