@@ -86,3 +86,23 @@ volumes:
 docker-compose up -d
 ```
 
+## Dockerfile
+
+``` dockerfile
+FROM alpine:3.7
+CMD ["ping", "www.google.com"]
+```
+    
+``` bash
+docker build -t ping .
+```
+
+``` bash
+docker build -t app .
+```
+
+``` bash
+docker run -p 8080:80 app 
+```
+http://localhost:8080/swagger/index.html
+
