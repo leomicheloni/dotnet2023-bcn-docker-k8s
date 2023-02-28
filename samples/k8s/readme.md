@@ -87,7 +87,13 @@ kubectl get deployments
 ## wordpress
 
 ``` bash
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/application/wordpress/mysql-deployment.yaml
+kubectl apply -f .
+```
+
+http://loclahost:8080
+
+``` bash
+kubectl describe node docker-desktop
 ```
 
 
