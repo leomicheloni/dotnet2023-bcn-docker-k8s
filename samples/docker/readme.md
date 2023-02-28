@@ -1,7 +1,13 @@
-# Sample
-- [Hello world](#hello-world)
-- [Rabbit](#rabbit)
-- [Wordpress with MySQL](#wordpress-with-mysql)
+# Demo
+- [1]
+  - [Hello world](#hello-world)
+  - [Rabbit](#rabbit)
+  - [Wordpress with MySQL](#wordpress-with-mysql)
+- [2]
+  - [Docker compose wordpress](#docker-compose-wordpress)
+- [3]
+  - [Dockerfile ping](#dockerfile-ping)
+  - [Dockerfile app](#dockerfile-app)
 
 ## Hello world
 ``` bash
@@ -46,7 +52,7 @@ https://hub.docker.com/_/wordpress/
 docker run --name some-wordpress -p 8080:80 -d wordpress
 ```
 
-
+## Docker compose wordpress
 
 ``` yaml
 version: '3.1'
@@ -86,7 +92,7 @@ volumes:
 docker-compose up -d
 ```
 
-## Dockerfile
+## Dockerfile ping
 
 ``` dockerfile
 FROM alpine:3.7
@@ -95,6 +101,16 @@ CMD ["ping", "www.google.com"]
     
 ``` bash
 docker build -t ping .
+```
+
+## Dockerfile app
+
+``` dockerfile
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
+COPY publish/ App/
+WORKDIR /App
+ENTRYPOINT ["dotnet", "WebApp.dll"]
+
 ```
 
 ``` bash

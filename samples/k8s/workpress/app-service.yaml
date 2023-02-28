@@ -5,7 +5,7 @@ metadata:
 spec:
  type: LoadBalancer
  selector:
-    app: my-wordpress # Busca a partir del laberl app: my-wordpres
+    app: my-wordpress
  ports:
   - name: "80"
     port: 8080

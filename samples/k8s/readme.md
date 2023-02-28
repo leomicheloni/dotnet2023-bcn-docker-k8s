@@ -1,3 +1,14 @@
+# Demo
+- [1]
+  - [Run nginx pod](#run-nginx-pod)
+  - [Create nginx pod from yaml](#create-nginx-pod-from-yaml)
+- [2]
+  - [Nginx Deployment](#nginx-deployment)
+- [3]
+  - [wordpress](#wordpress)
+
+
+## Run nginx pod
 ``` bash
 kubectl run nginx --image=nginx
 ```
@@ -16,6 +27,8 @@ kubectl port-forward pod/nginx 8080:80
 
 http://localhost:8080
 
+## Create nginx pod from yaml
+
 ``` yaml
 
 apiVersion: v1
@@ -27,7 +40,7 @@ spec:
     name: nginx
 ```
 
-## Deployments
+## Nginx Deployment
 
 ``` yaml
 apiVersion: apps/v1
@@ -71,6 +84,10 @@ kubectl get pods -o wide
 kubectl get deployments
 ```
 
-```
+## wordpress
 
 ``` bash
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/application/wordpress/mysql-deployment.yaml
+```
+
+
