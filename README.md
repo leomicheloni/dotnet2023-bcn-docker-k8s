@@ -1,3 +1,6 @@
-# dotnet2023-bcn-docker-k8s
+# Material de la charla sobre Docker y Kubernetes en NetCore Conf 2023
 
-docker run -d -p 80:80 docker/getting-started
+- [Evento](https://netcoreconf-barcelona-2023.sessionize.com/session/450461)
+
+- [Docker](samples/docker/readme.md)
+- [Kubernetes](samples/k8s/readme.md)
