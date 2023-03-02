@@ -1,13 +1,32 @@
 # Demo
 - [1]
+  - [Some commands](#some-commands)
   - [Hello world](#hello-world)
   - [Rabbit](#rabbit)
   - [Wordpress with MySQL](#wordpress-with-mysql)
 - [2]
   - [Docker compose wordpress](#docker-compose-wordpress)
+  - [Volumnes](#volumnes)
 - [3]
   - [Dockerfile ping](#dockerfile-ping)
   - [Dockerfile app](#dockerfile-app)
+
+
+## Some commands
+  
+  ``` bash
+  docker images
+  ```
+  
+  ``` bash
+  docker ps
+  ```
+  
+  ``` bash
+  docker ps -a
+  ```
+  
+  
 
 ## Hello world
 ``` bash
@@ -90,6 +109,20 @@ volumes:
 
 ``` bash
 docker-compose up -d
+```
+
+## Volumnes
+
+``` bash
+docker volume ls
+```
+
+``` bash
+docker volume create my-vol
+```
+
+``` bash
+ docker volume inspect docker_db
 ```
 
 ## Dockerfile ping
