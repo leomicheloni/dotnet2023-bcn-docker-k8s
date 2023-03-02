@@ -136,6 +136,14 @@ CMD ["ping", "www.google.com"]
 docker build -t ping .
 ```
 
+``` bash
+docker images
+```
+
+``` bash
+docker run ping
+```
+
 ## Dockerfile app
 
 ``` dockerfile

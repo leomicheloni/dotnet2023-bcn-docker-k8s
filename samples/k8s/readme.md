@@ -4,6 +4,7 @@
   - [Create nginx pod from yaml](#create-nginx-pod-from-yaml)
 - [2]
   - [Nginx Deployment](#nginx-deployment)
+  - [Ngin service](#nginx-service)
 - [3]
   - [wordpress](#wordpress)
 
@@ -83,6 +84,19 @@ kubectl get pods -o wide
 ``` bash	
 kubectl get deployments
 ```
+
+## Ngin service
+
+``` bash
+kubectl apply -f nginx-service.yaml
+```
+
+``` bash
+kubectl get services -o wide
+```
+
+
+
 
 ## wordpress
 
