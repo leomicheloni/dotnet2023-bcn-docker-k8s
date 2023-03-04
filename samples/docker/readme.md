@@ -14,30 +14,30 @@
 
 ## Some commands
   
-  ``` bash
+  ``` powershell
   docker images
   ```
   
-  ``` bash
+  ``` powershell
   docker ps
   ```
   
-  ``` bash
+  ``` powershell
   docker ps -a
   ```
   
   
 
 ## Hello world
-``` bash
+``` powershell
 docker run hello-world
 ```
 
-``` bash
+``` powershell
 docker run hello-world
 ```
 
-``` bash	
+``` powershell	
 docker ps
 ```
 
@@ -45,29 +45,33 @@ docker ps
 
 https://hub.docker.com/_/rabbitmq
 
-``` bash
+``` powershell
  docker run -d rabbitmq:3-management
  ```
 
-``` bash
+``` powershell
  docker run -d --hostname my-rabbit --name some-rabbit -p 8080:15672 rabbitmq:3-management
  ```
 
-``` bash
+``` powershell
 docker ps
 ```
 
 http://localhost:8080
 
-``` bash
-$ docker run -d --hostname my-rabbit --name some-rabbit -e RABBITMQ_DEFAULT_USER=user -e RABBITMQ_DEFAULT_PASS=password rabbitmq:3-management
+``` powershell
+$ docker run -d --hostname my-rabbit2 -p 8080:15672 --name some-rabbit -e RABBITMQ_DEFAULT_USER=user -e RABBITMQ_DEFAULT_PASS=password rabbitmq:3-management
+```
+
+``` powershell
+docker history rabbitmq:3-management
 ```
 
 ## Wordpress with MySQL
 
 https://hub.docker.com/_/wordpress/
 
-``` bash
+``` powershell
 docker run --name some-wordpress -p 8080:80 -d wordpress
 ```
 
@@ -107,21 +111,21 @@ volumes:
   db:
 ```
 
-``` bash
+``` powershell
 docker-compose up -d
 ```
 
 ## Volumnes
 
-``` bash
+``` powershell
 docker volume ls
 ```
 
-``` bash
+``` powershell
 docker volume create my-vol
 ```
 
-``` bash
+``` powershell
  docker volume inspect docker_db
 ```
 
@@ -132,15 +136,15 @@ FROM alpine:3.7
 CMD ["ping", "www.google.com"]
 ```
     
-``` bash
+``` powershell
 docker build -t ping .
 ```
 
-``` bash
+``` powershell
 docker images
 ```
 
-``` bash
+``` powershell
 docker run ping
 ```
 
@@ -154,11 +158,11 @@ ENTRYPOINT ["dotnet", "WebApp.dll"]
 
 ```
 
-``` bash
+``` powershell
 docker build -t app .
 ```
 
-``` bash
+``` powershell
 docker run -p 8080:80 app 
 ```
 http://localhost:8080/swagger/index.html

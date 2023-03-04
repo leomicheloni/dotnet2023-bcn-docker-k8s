@@ -10,19 +10,19 @@
 
 
 ## Run nginx pod
-``` bash
+``` powershell
 kubectl run nginx --image=nginx
 ```
 
-``` bash
+``` powershell
 kubectl get pods
 ```
 
-``` bash
+``` powershell
 kubectl get pods -o wide
 ```
 
-``` bash
+``` powershell
 kubectl port-forward pod/nginx 8080:80
 ```
 
@@ -65,33 +65,33 @@ spec:
         - containerPort: 80
 ```
 
-``` bash
+``` powershell
 kubectl apply -f nginx-deployment.yaml
 ```
 
-``` bash
+``` powershell
 kubectl get pods -o wide
 ```
 
-``` bash
+``` powershell
 kubectl delete pod my-nginx-5c8b9f4b74-2xq5n
 ```
 
-``` bash
+``` powershell
 kubectl get pods -o wide
 ```
 
-``` bash	
+``` powershell	
 kubectl get deployments
 ```
 
 ## Ngin service
 
-``` bash
+``` powershell
 kubectl apply -f nginx-service.yaml
 ```
 
-``` bash
+``` powershell
 kubectl get services -o wide
 ```
 
@@ -100,13 +100,13 @@ kubectl get services -o wide
 
 ## wordpress
 
-``` bash
+``` powershell
 kubectl apply -f .
 ```
 
 http://loclahost:8080
 
-``` bash
+``` powershell
 kubectl describe node docker-desktop
 ```
 
